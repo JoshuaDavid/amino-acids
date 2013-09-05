@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Amino Acids</title>
+        <script src="http://localhost/js/q.js"></script>
+        <script src="http://localhost/js/jquery.js"></script>
+        <script src="./aminoacidquiz.js"></script>
+        <link rel="stylesheet" type="text/css" href="./aminoacidquiz.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Amino Acid Practice</h1>
+        </header>
+        <div id="current-question">
+            <h2 id="instructions"></h2>
+            <div id="imageHolder"></div>
+            <form id="inputHolder">
+                <input type="text" id="AAname" />
+                <button id="answer">Submit Answer</button>
+            </form>
+            <div id="result"></div>
+            <div id="correct-answer"></div>
+        </div>
+        <aside id="acid-list">
+            <h2>List of amino acids</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>3 Letter Abbreviation</th>
+                        <th>1 Letter Abbreviation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>alanine</td>       <td>ala</td>    <td>A</td> </tr>
+                    <tr> <td>arginine</td>      <td>arg</td>    <td>R</td> </tr>
+                    <tr> <td>asparagine</td>    <td>asn</td>    <td>N</td> </tr>
+                    <tr> <td>aspartic</td>      <td>asp</td>    <td>D</td> </tr>
+                    <tr> <td>cysteine</td>      <td>cys</td>    <td>C</td> </tr>
+                    <tr> <td>glutamine</td>     <td>gln</td>    <td>Q</td> </tr>
+                    <tr> <td>glutamic</td>      <td>glu</td>    <td>E</td> </tr>
+                    <tr> <td>glycine</td>       <td>gly</td>    <td>G</td> </tr>
+                    <tr> <td>histidine</td>     <td>his</td>    <td>H</td> </tr>
+                    <tr> <td>isoleucine</td>    <td>ile</td>    <td>I</td> </tr>
+                    <tr> <td>leucine</td>       <td>leu</td>    <td>L</td> </tr>
+                    <tr> <td>lysine</td>        <td>lys</td>    <td>K</td> </tr>
+                    <tr> <td>methionine</td>    <td>met</td>    <td>M</td> </tr>
+                    <tr> <td>phenylalanine</td> <td>phe</td>    <td>F</td> </tr>
+                    <tr> <td>proline</td>       <td>pro</td>    <td>P</td> </tr>
+                    <tr> <td>serine</td>        <td>ser</td>    <td>S</td> </tr>
+                    <tr> <td>threonine</td>     <td>thr</td>    <td>T</td> </tr>
+                    <tr> <td>tryptophan</td>    <td>trp</td>    <td>W</td> </tr>
+                    <tr> <td>tyrosine</td>      <td>tyr</td>    <td>Y</td> </tr>
+                    <tr> <td>valine</td>        <td>val</td>    <td>V</td> </tr>
+                </tbody>
+            </table>
+        </aside>
+        <aside id="performance">
+            <h2>Performance</h2>
+            <table>
+                <tr>
+                    <td><label for="score">Score:</label></td>
+                    <td><output id="score">0</output></td>
+                </tr>
+                <tr>
+                    <td><label for="overallaverage">Overall Average:</label></td>
+                    <td><output id="overallaverage">0</output></td>
+                </tr>
+            </table>
+        </aside>
+        <footer>
+            Copyright &copy; Joshua David, 2013
+        </footer>
+    </body>
+</html>
