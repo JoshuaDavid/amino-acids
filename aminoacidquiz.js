@@ -41,7 +41,7 @@ function log(x) {
 }
 
 load.then(function() {
-    return askQuestions(10);
+    return askQuestions(1000);
 })
 
 function askQuestions(num) {
@@ -74,7 +74,13 @@ function getRandomAA() {
 function showAbbrQuestion(aa) {
     var d = Q.defer();
     var p = d.promise;
-    var $img = $("<img/>").attr("src", "./Images/" + aa.abbr + ".png");
+    var $img = $("<img/>").attr("src", "./Images/" + aa.abbr + ".jpg").on("load", function() {
+        $(this).height($("#imageHolder").height());
+        if($(this).width() > $("#imageHolder").width()) {
+            var ratio = $(this).height() / $(this).width();
+            $(this).height($("#imageHolder").width() * ratio);
+        }
+    });
     $("#instructions").html("Write the one or three-letter abbreviation of the amino acid");
     $("#imageHolder").html($img);
     $("#AAname").val("").focus();
@@ -118,6 +124,12 @@ function doScoreStuff(answerWasCorrect) {
     else                 { scores.push(0); }
     $("#score").html(sum(scores));
     $("#overallaverage").html(Math.floor(sum(scores) / scores.length * 100) + '%');
+    var last5  = scores.slice(-5),
+        last10 = scores.slice(-10),
+        last50 = scores.slice(-50); 
+    $("#last5average").html(Math.floor(sum(last5) / last5.length * 100) + '%');
+    $("#last10average").html(Math.floor(sum(last10) / last10.length * 100) + '%');
+    $("#last50average").html(Math.floor(sum(last50) / last50.length * 100) + '%');
     setTimeout(function() { d.resolve(answerWasCorrect); }, 2000);
     return p;
 }
